@@ -1,10 +1,12 @@
 import axios from "axios";
+import { ApiKey } from "./apiKey";
 
 
-export const GetListFilm = () =>{
-    axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=187bce2cb335ae655ef89d8381ac308f`)
+export const GetListFilm = (setState) =>{
+    axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${ApiKey}`)
     .then((response)=>{
-        console.log(response.data);
+        setState(response.data.results);
+        console.log(response.data.results);
     }).catch((error)=>{
         console.log(error)
     })

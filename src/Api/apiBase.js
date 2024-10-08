@@ -1,0 +1,1 @@
+export const apiBase = `https://image.tmdb.org/t/p/w300`
