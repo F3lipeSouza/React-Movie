@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 
-export const FooterComponent = styled.footer`
+export const HeaderPage = styled.div`
     background-color:#c4c4c6;
-    margin-top:20%;
     display:flex;
     justify-content:center;
-    font-size:18px;
+    font-size:200%;
+    font-weight:700;
 `

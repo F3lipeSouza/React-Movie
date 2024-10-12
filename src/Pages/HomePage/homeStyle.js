@@ -1,5 +1,11 @@
 import styled from "styled-components";
 
+export const Body = styled.div`
+  display:flex;
+  flex-direction:column;
+
+`
+
 export const DivHome = styled.div`
   width: 100%;
   display: flex;
@@ -11,7 +17,6 @@ export const ImageBannerHome = styled.img`
   width: 80vw;
   height: 80vh;
   object-fit: contain;
-  // background-image: linear-gradient(to bottom right ,#c4c4c6, #131415);
 `;
 
 export const MovieContainer = styled.div`
