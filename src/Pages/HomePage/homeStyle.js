@@ -15,15 +15,14 @@ export const ImageBannerHome = styled.img`
 `;
 
 export const MovieContainer = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
+  width:90vw;
+  margin-left:5%;
 `;
 
 export const GridMovie = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  max-width: 80vw;
+  row-gap:2%;
+  grid-template-columns: repeat(4, 1fr);
 `;
 
 export const Card = styled.div`
@@ -31,4 +30,5 @@ export const Card = styled.div`
   flex-direction: column;
   width: 320px;
   border: 2px solid #c4c4c6;
+  padding:2%;
 `;
