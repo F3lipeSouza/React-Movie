@@ -1,9 +1,16 @@
 import { HeaderPage } from "./headerStyled";
 
-export function Header() {
+export function Header({page}) {
+
+  function NomeDoHeader({page}){
+    return(
+      <p>{page}</p>
+    )
+  }
+  
   return (
     <HeaderPage>
-      <p>Home</p>
+      <NomeDoHeader page={page}/>
     </HeaderPage>
   );
 }

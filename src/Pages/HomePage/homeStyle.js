@@ -36,4 +36,15 @@ export const Card = styled.div`
   width: 320px;
   border: 2px solid #c4c4c6;
   padding:2%;
+  
+  &:hover{
+    cursor:pointer;
+    background-color:#c4c4c6;
+  }
 `;
+
+export const Title = styled.h3`
+  font-size:200%;
+  margin-top:0;
+  padding-left:2%;
+`
