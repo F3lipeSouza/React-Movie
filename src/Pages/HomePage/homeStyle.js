@@ -1,8 +1,10 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Body = styled.div`
   display:flex;
   flex-direction:column;
+  justify-content:space-between;
 `;
 
 export const DivHome = styled.div`
@@ -29,12 +31,14 @@ export const GridMovie = styled.div`
   grid-template-columns: repeat(4, 1fr);
 `;
 
-export const Card = styled.div`
+export const Card = styled(Link)`
   display: flex;
   flex-direction: column;
   width: 320px;
   border: 2px solid #c4c4c6;
   padding: 2%;
+  text-decoration: none;
+  color:black;
 
   &:hover {
     cursor: pointer;

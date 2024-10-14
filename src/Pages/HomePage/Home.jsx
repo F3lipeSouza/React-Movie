@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Footer } from "../../components/footer/Footer";
-import { getMoviesList } from "../../Api/Api";
+import { getDetail, getMoviesList } from "../../Api/Api";
 import { apiBase } from "../../Api/apiBase";
 import {
   Body,
@@ -12,16 +12,27 @@ import {
   Title,
 } from "./homeStyle";
 import { Header } from "../../components/header/Header";
+import { getMovieInfo } from "../../redux/movieSlice";
+import { useDispatch } from "react-redux";
 
 export function HomePage() {
   const [movies, setMovies] = useState([]);
+  const [movieDetail, setMovieDetail] = useState();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     getMoviesList(setMovies);
-    return () => {
-      console.log("componente desmontou!");
-    };
   }, []);
+
+  const onHoverDetail = (e) => {
+    getDetail(e.target.id, setMovieDetail);
+  };
+
+  useEffect(() => {
+    if (movieDetail){
+      dispatch(getMovieInfo(movieDetail));
+    }
+  }, [movieDetail, dispatch]);
 
   return (
     <Body>
@@ -37,7 +48,7 @@ export function HomePage() {
       <MovieContainer>
         <GridMovie>
           {movies.map((movie) => (
-            <Card key={movie.id}>
+            <Card id={movie.id} key={movie.id} onMouseEnter={(e) => onHoverDetail(e)} to={'/details'}>
               <img src={`${apiBase}${movie.poster_path}`} alt={movie.title} />
               <h3>Titulo: {movie.title}</h3>
               <h3>Nota: {movie.vote_average.toFixed(1)}</h3>

@@ -1,24 +1,38 @@
+import { useSelector } from "react-redux";
 import { Footer } from "../../components/footer/Footer";
 import { Header } from "../../components/header/Header";
-import { DetailsCard, DetaisBtn, ImagePoster, MoviePoster, Sinopse } from "./detaisStyled";
+import {
+  DetailsCard,
+  DetaisBtn,
+  ImagePoster,
+  MainContainer,
+  MoviePoster,
+  Sinopse,
+} from "./detaisStyled";
+import { apiBase } from "../../Api/apiBase";
 
 export function Details() {
+  const state = useSelector((state) => state.movies.movie);
+
   return (
-    <>
-      <Header page='Details'/>
+    <MainContainer>
+      <Header page={state.title} />
       <DetailsCard>
-      <MoviePoster>
-        <ImagePoster src="data:image/jpeg;base64,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" alt="algo"/>
-      </MoviePoster>
-      <Sinopse>
-        <h3>titulo:</h3> 
-        <h3>sinopse:</h3>
-        <h3>lançamento:</h3>
-        <h3>nota:</h3>
-        <DetaisBtn>Voltar para home</DetaisBtn>
-      </Sinopse>
+        <MoviePoster>
+          <ImagePoster
+            src={`${apiBase}${state.poster_path}`}
+            alt={`Poster do filme ${state.title}`}
+          />
+        </MoviePoster>
+        <Sinopse>
+          <p><b>titulo:</b>{state.title}</p>
+          <p><b>sinopse:</b>{state.overview}</p>
+          <p><b>lançamento:</b>{state.release_date}</p>
+          <p><b>nota:</b>{state.vote_average?state.vote_average.toFixed(1):'N/A'}</p>
+          <DetaisBtn to={'/'}>Voltar para home</DetaisBtn>
+        </Sinopse>
       </DetailsCard>
-      <Footer/>
-    </>
+      <Footer />
+    </MainContainer>
   );
 }

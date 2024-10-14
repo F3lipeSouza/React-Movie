@@ -1,22 +1,35 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
+
+export const MainContainer = styled.div`
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+`
 
 export const DetailsCard = styled.div`
   display: flex;
+  height:30vh;
 `;
 
 export const MoviePoster = styled.div`
-  width: 30vw;
+  width: 100vw;
+  height:60vh;
 `;
 
 export const ImagePoster = styled.img`
   width: 100%;
+  height:130%;
 `;
 
 export const Sinopse = styled.div`
+  font-size:24px;
+  gap:2%;
   margin-left: 2%;
+  margin-right:2%;
 `;
 
-export const DetaisBtn = styled.button`
+export const DetaisBtn = styled(Link)`
   background-color: #c4c4c6;
   border: 2px solid black;
   width: 200px;
@@ -29,6 +42,9 @@ export const DetaisBtn = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  text-decoration:none;
+  color:black;
+
   &:hover {
     cursor: pointer;
     zoom: 110%;
