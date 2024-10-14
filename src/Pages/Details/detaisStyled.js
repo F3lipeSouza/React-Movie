@@ -9,6 +9,7 @@ export const MainContainer = styled.div`
 
 export const DetailsCard = styled.div`
   display: flex;
+  flex: 1;
   height:30vh;
 `;
 
