@@ -6,7 +6,7 @@ import { NotFound } from "../Pages/NotFoundPage/NotFound";
 
 export function Router(){
     return(
-        <BrowserRouter>
+        <BrowserRouter basename="/React-Movie">
             <Routes>
                 <Route index element = {<HomePage/>}/>
                 <Route path="/details" element = {<Details/>}/>
