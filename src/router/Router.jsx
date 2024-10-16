@@ -9,7 +9,7 @@ export function Router(){
         <HashRouter>
             <Routes>
                 <Route index element = {<HomePage/>}/>
-                <Route path="/details" element = {<Details/>}/>
+                <Route path="/details/" element = {<Details/>}/>
                 <Route path="*" element = {<NotFound/>}/>
             </Routes>
         </HashRouter>

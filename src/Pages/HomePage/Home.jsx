@@ -24,8 +24,8 @@ export function HomePage() {
     getMoviesList(setMovies);
   }, []);
 
-  const onHoverDetail = (e) => {
-    getDetail(e.target.id, setMovieDetail);
+  const onHoverDetail = (id) => {
+    getDetail(id, setMovieDetail);
   };
 
   useEffect(() => {
@@ -48,7 +48,7 @@ export function HomePage() {
       <MovieContainer>
         <GridMovie>
           {movies.map((movie) => (
-            <Card id={movie.id} key={movie.id} onMouseEnter={(e) => onHoverDetail(e)} to={'/details'}>
+            <Card id={movie.id} key={movie.id} onMouseEnter={() => onHoverDetail(movie.id)} to={`/details`}>
               <img src={`${apiBase}${movie.poster_path}`} alt={movie.title} />
               <h3>Titulo: {movie.title}</h3>
               <h3>Nota: {movie.vote_average.toFixed(1)}</h3>
